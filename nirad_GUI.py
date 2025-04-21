@@ -61,7 +61,7 @@ if "chat_history" not in st.session_state:
 for message in st.session_state.messages:
    with st.chat_message(message["role"], avatar=message["avatar"]):
        if message["role"]=='user':
-           st.write(f":red[{message["content"]}]")
+           st.write(f":red[{message['content']}]")
        else:
             st.text(message["content"])
      
