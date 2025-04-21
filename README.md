@@ -1,4 +1,3 @@
-
 ![NIRAD Logo](images/nirad.jpg)
 
 # 🧠 N.I.R.A.D. – Network Interdiction Resilience Advanced Defense
@@ -8,8 +7,7 @@
 ---
 
 ## 📂 Project Structure
-nirad/ ├── images/ # UI icons ├── input/ # Network input files (e.g., network_test.txt) ├── static/ # GUI sound effects ├── feasibility_robust.py # Pyomo model: Feasibility robustness ├── max_flow.py # Pyomo model: Maximum flow ├── optimality_robust.py # Pyomo model: Optimality robustness ├── nirad_utils.py # Agents, LLM prompts, solver configs (GLPK) ├── nirad_CLI.py # Command-line interface ├── nirad_GUI.py # Streamlit GUI with sounds ├── README.md └── requirements.txt
-
+<pre> nirad/ ├── images/ # UI icons ├── input/ # Network input files (e.g., network_test.txt) ├── static/ # GUI sound effects (free license from mixkit) ├── feasibility_robust.py # Pyomo model: Feasibility robustness ├── max_flow.py # Pyomo model: Maximum flow ├── optimality_robust.py # Pyomo model: Optimality robustness ├── nirad_utils.py # Agents, LLM prompts, solver configs (GLPK) ├── nirad_CLI.py # Command-line interface ├── nirad_GUI.py # Streamlit GUI with sounds ├── README.md └── requirements.txt </pre>
 
 ---
 
@@ -79,6 +77,8 @@ python -m streamlit run nirad_GUI.py
     `pip install -r requirements.txt`
 
     3. Ensure glpsol (GLPK solver) is available on your system path.
+
+    4. Set-up your GOOGLE_API_KEY in the nirad_utils.py file for using Gemini (or the appropriate key if you replace the LLM)  
 
 
 📜 License
