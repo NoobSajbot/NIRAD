@@ -16,6 +16,7 @@ from typing import Optional, Tuple, List, TypeVar
 import max_flow as maxflow_abstract
 import optimality_robust as rob_opt
 import feasibility_robust as rob_feas
+import os
 
 
 DataFrame = TypeVar('pandas.core.frame.DataFrame')
@@ -30,7 +31,7 @@ global nodes_b
 global source_b
 global terminal_b
 
-
+GOOGLE_API_KEY=os.environ.get('GOOGLE_API_KEY')
 
 input_file='input/network_test.txt'
 
