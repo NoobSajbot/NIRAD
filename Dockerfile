@@ -19,5 +19,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 WORKDIR /app
 
+# Expose port for Streamlit
+EXPOSE 8501
+
 # Start Streamlit
 CMD ["streamlit", "run", "nirad_GUI.py"]
