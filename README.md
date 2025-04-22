@@ -7,7 +7,23 @@
 ---
 
 ## 📂 Project Structure
-<pre> nirad/ ├── images/ # UI icons ├── input/ # Network input files (e.g., network_test.txt) ├── static/ # GUI sound effects (free license from mixkit) ├── feasibility_robust.py # Pyomo model: Feasibility robustness ├── max_flow.py # Pyomo model: Maximum flow ├── optimality_robust.py # Pyomo model: Optimality robustness ├── nirad_utils.py # Agents, LLM prompts, solver configs (GLPK) ├── nirad_CLI.py # Command-line interface ├── nirad_GUI.py # Streamlit GUI with sounds ├── README.md └── requirements.txt </pre>
+
+### **Directories**
+- **`images/`**: Contains icons and other graphical assets used in the user interface.
+- **`input/`**: Stores network input files required for simulations and analysis, such as `network_test.txt`.
+- **`static/`**: Contains sound effects used in the GUI. All sound effects are free to use and sourced from [Mixkit](https://mixkit.co/).
+
+### **Python Scripts**
+- **`feasibility_robust.py`**: Implements the feasibility robustness model using Pyomo.
+- **`max_flow.py`**: Implements the maximum flow model using Pyomo.
+- **`optimality_robust.py`**: Implements the optimality robustness model using Pyomo.
+- **`nirad_utils.py`**: Contains utility functions, including agent configurations, LLM prompts, and solver configurations (e.g., GLPK).
+- **`nirad_CLI.py`**: Provides a command-line interface for interacting with N.I.R.A.D.
+- **`nirad_GUI.py`**: Implements the graphical user interface using Streamlit, including sound effects for user interaction.
+
+### **Other Files**
+- **`README.md`**: This file, providing an overview of the repository and its components.
+- **`requirements.txt`**: Lists the Python dependencies required to run the project.---
 
 ---
 

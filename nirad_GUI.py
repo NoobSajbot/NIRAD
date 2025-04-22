@@ -12,11 +12,15 @@ import pandas as pd
 from colorama import Fore, Back, Style
 import streamlit as st
 
-from playsound import playsound #use version 1.2.2
+#for windows
+#from playsound import playsound #use version 1.2.2
+
+#general
+import pygame
 
 
-#set to False to disable sound
-enable_sound=True
+#set to True to disable sound
+enable_sound=False
 
 
 st.set_page_config(page_title="N.I.R.A.D.", page_icon="images/nirad_icon.ico", layout="wide")
@@ -61,7 +65,7 @@ if "chat_history" not in st.session_state:
 for message in st.session_state.messages:
    with st.chat_message(message["role"], avatar=message["avatar"]):
        if message["role"]=='user':
-           st.write(f":red[{message["content"]}]")
+           st.write(f":red[{message['content']}]")
        else:
             st.text(message["content"])
      
@@ -76,7 +80,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
         
-        
+
+if enable_sound:
+    pygame.mixer.init()        
         
 if prompt := st.chat_input(">>"):
     # Add user input to the session state messages
@@ -84,7 +90,11 @@ if prompt := st.chat_input(">>"):
     with st.chat_message("user", avatar="images/user_gpt.png"):
         st.write(f":red[{prompt}]")
         if enable_sound:
-            playsound("static/mixkit-sci-fi-click-900.mp3")
+            pygame.mixer.music.load("static/mixkit-sci-fi-click-900.mp3")
+            pygame.mixer.music.play()
+            
+            #for windows
+            #playsound("static/mixkit-sci-fi-click-900.mp3")
         
     # Append the new user input to the chat history
     st.session_state.chat_history += f"User: {prompt}\n"
@@ -96,7 +106,10 @@ if prompt := st.chat_input(">>"):
         response = shu.retry(agent, st.session_state.chat_history)
         st.text(response)
         if enable_sound:
-            playsound("static/mixkit-opening-software-interface-2578.mp3")
+            #fow windows
+            #playsound("static/mixkit-opening-software-interface-2578.mp3")
+            pygame.mixer.music.load("static/mixkit-opening-software-interface-2578.mp3")
+            pygame.mixer.music.play()
         
         # Append the agent's response to the chat history
         st.session_state.chat_history += f"Answer: {response}\n"
