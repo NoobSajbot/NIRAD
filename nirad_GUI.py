@@ -81,8 +81,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
         
 
-
-pygame.mixer.init()        
+if enable_sound:
+    pygame.mixer.init()        
         
 if prompt := st.chat_input(">>"):
     # Add user input to the session state messages
