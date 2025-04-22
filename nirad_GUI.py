@@ -19,8 +19,8 @@ import streamlit as st
 import pygame
 
 
-#set to False to disable sound
-enable_sound=True
+#set to True to disable sound
+enable_sound=False
 
 
 st.set_page_config(page_title="N.I.R.A.D.", page_icon="images/nirad_icon.ico", layout="wide")
