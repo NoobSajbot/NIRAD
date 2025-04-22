@@ -23,13 +23,15 @@
 
 ### **Other Files**
 - **`README.md`**: This file, providing an overview of the repository and its components.
-- **`requirements.txt`**: Lists the Python dependencies required to run the project.---
+- **`requirements.txt`**: Lists the Python dependencies required to run the project.
+- **`Dockerfile`**: User to run NIRAD on a server online.
 
 ---
 
 ## 📈 Input Format
 
 Place your network file inside the `input/` folder. For example: `network_test.txt`
+Update the file name in the NIRAD_utils.py file
 
 Each row in the file represents a link (arc) and follows the format:
 
