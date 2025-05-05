@@ -29,7 +29,7 @@ initial_prompt=f'{shu.prompt_NIRAD_v2}\n {shu.few_shot_examples_v2}\n'
 
 list_tools=[shu.compute_worst_case_attack, shu.compute_resilience, shu.compute_max_flow, shu.get_network, shu.generate_input_data, shu.change_capacity, shu.change_cost, shu.reset_values]
 
-agent = CodeAgent(tools=list_tools, model=shu.model, additional_authorized_imports=['pandas','io'], max_steps=15, verbosity_level=-1)  #-1 to suppress reasoning steps
+agent = CodeAgent(tools=list_tools, model=shu.model, additional_authorized_imports=['pandas','io'], max_steps=10, verbosity_level=-1)  #-1 to suppress reasoning steps
 
 
 
@@ -57,6 +57,8 @@ st.header(":green[Network Interdiction Resilience Advanced Defense]")
 # Initialize session state variables
 if "messages" not in st.session_state:
     st.session_state.messages = []
+    #reset values first execution
+    shu.reset_values()
     
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = initial_prompt  # Initialize an empty chat history
