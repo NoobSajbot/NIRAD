@@ -57,8 +57,7 @@ st.header(":green[Network Interdiction Resilience Advanced Defense]")
 # Initialize session state variables
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    #reset values first execution
-    shu.reset_values()
+
     
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = initial_prompt  # Initialize an empty chat history
@@ -70,6 +69,16 @@ for message in st.session_state.messages:
            st.write(f":red[{message['content']}]")
        else:
             st.text(message["content"])
+      
+
+#reset network data when new execution            
+if "reset_executed" not in st.session_state:
+    st.session_state.reset_executed = False
+
+# Run shu.reset_values() if it hasn't been executed in this session
+if not st.session_state.reset_executed:
+    shu.reset_values()  # Call your function here
+    st.session_state.reset_executed = True
      
 
 # Handling user input style
